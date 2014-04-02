@@ -1,0 +1,22 @@
+[core]
+	excludesfile = /Users/mbodmer/.gitignore
+	editor = sublime -n -w
+[user]
+	name = Marc Bodmer
+	email = marc@500px.com
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+           c = commit -m
+           cob = checkout -b
+           ca = commit --amend -C HEAD
+           st = status -sb
+           purr = pull --rebase
+           ready = rebase -i @{u}
+           pushup = push origin head
+           co = checkout
+           up = !git fetch origin && git rebase origin/master
+[color]
+	ui = true
+	ui = false
+[push]
+	default = simple
