@@ -1,0 +1,9 @@
+# Rails files
+Procfile.all
+
+# OS generated files
+.DS_Store
+.DS_Store?
+Desktop.ini
+.Spotlight-V100
+.Trashes

@@ -1,5 +1,5 @@
 [core]
-	excludesfile = /Users/mbodmer/.gitignore
+	excludesfile = ~/.gitignore_global
 	editor = sublime -n -w
 [user]
 	name = Marc Bodmer
@@ -9,16 +9,19 @@
   c = commit -m
   cob = checkout -b
   ca = commit --amend -C HEAD
-  st = status -sb
+  st = status -s
   purr = pull --rebase
   ready = rebase -i @{u}
   pushup = push origin head
   co = checkout
   up = !git fetch origin && git rebase origin/master
-  pupstream = fetch upstream && git merge upstream/master
+  pupstream = git fetch upstream && git merge upstream/master
+  # Remove branches that have already been merged with master
+  dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+  # Interactive rebase with the given number of latest commits
+  reb = "!r() { git rebase -i HEAD~$1; }; r"
 [color]
 	ui = true
-	ui = false
 [push]
 	default = simple
 [credential]

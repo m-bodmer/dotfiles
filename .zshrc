@@ -3,13 +3,10 @@ ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME="myusuf3"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# Aliases
+source $HOME/.aliases
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -57,6 +54,6 @@ export NODE_PATH=/usr/local/lib/node_modules
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # Allow RVM to work
-if test -f ~/.rvm/scripts/rvm; then
-    [ "$(type -t rvm)" = "function" ] || source ~/.rvm/scripts/rvm
-fi
+# if test -f ~/.rvm/scripts/rvm; then
+#     [ "$(type -t rvm)" = "function" ] || source ~/.rvm/scripts/rvm
+# fi

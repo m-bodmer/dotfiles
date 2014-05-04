@@ -1,0 +1,9 @@
+# Shortcuts
+alias 500px="cd ~/Code/500px"
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
