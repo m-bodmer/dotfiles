@@ -1,0 +1,38 @@
+{
+	"bold_folder_labels": true,
+	"caret_style": "phase",
+	"color_scheme": "Packages/Theme - Refined/Color Schemes/Tomorrow Night Refined.tmTheme",
+	"draw_indent_guides": true,
+	"draw_white_space": "all",
+	"ensure_newline_at_eof_on_save": true,
+	"flatland_square_tabs": true,
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		"dist",
+		"build",
+		"site"
+	],
+	"font_face": "Source Code Pro",
+	"font_size": 15.0,
+	"git_gutter_live_mode": false,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Vintage",
+		"AutoFileName",
+		"Emmet",
+		"SublimeLinter",
+		"LiveReload"
+	],
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+	"show_full_path": "true",
+	"tab_size": 2,
+	"theme": "Flatland Dark.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"wide_caret": true
+}
