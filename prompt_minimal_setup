@@ -1,7 +1,5 @@
 #
 # A theme based on Steve Losh's Extravagant Prompt with vcs_info integration.
-# This theme should be placed in: 
-#    /marc/.zprezto/modules/prompt/functions
 #
 # Authors:
 #   Marcello Seri <mseri@mseri.me>
@@ -12,7 +10,7 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
-function prompt_mseri_precmd {
+function prompt_minimal_precmd {
   # Check for untracked files or updated submodules since vcs_info does not.
   if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
     branch_format="${_prompt_mseri_colors[1]}(${_prompt_mseri_colors[1]}%b%f%u%c${_prompt_mseri_colors[4]}●%f)"
@@ -34,7 +32,7 @@ function prompt_mseri_precmd {
   fi
 }
 
-function prompt_mseri_setup {
+function prompt_minimal_setup {
   setopt LOCAL_OPTIONS
   unsetopt XTRACE KSH_ARRAYS
   prompt_opts=(cr percent subst)
@@ -44,7 +42,7 @@ function prompt_mseri_setup {
   autoload -Uz vcs_info
 
   # Add hook for calling vcs_info before each command.
-  add-zsh-hook precmd prompt_mseri_precmd
+  add-zsh-hook precmd prompt_minimal_precmd
 
   # Use extended color pallete if available.
   if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
@@ -97,4 +95,4 @@ function prompt_mseri_setup {
   RPROMPT='%F{blue}${ruby_info[version]}'
 }
 
-prompt_mseri_setup "$@"
+prompt_minimal_setup "$@"
