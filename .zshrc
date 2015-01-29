@@ -4,17 +4,20 @@
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
+# Modified by Marc Bodmer
+# Need to install rbenv
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
+# export AWS_ACCESS_KEY_ID="[ENTER_KEY_HERE]"
+# export AWS_SECRET_ACCESS_KEY="[ENTER_KEY_HERE]"
 
 # Start rbenv
 # export PATH="$HOME/.rbenv/bin:$PATH"
-# eval "$(rbenv init -)"
+eval "$(rbenv init -)"
 
 # Add homebrew to the completion path
 fpath=("/usr/local/bin/" $fpath)
