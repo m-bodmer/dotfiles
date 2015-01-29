@@ -1,5 +1,4 @@
 # Shortcuts
-alias 500px="cd ~/Code/500px"
 alias wp="cd /Applications/MAMP/htdocs"
 alias cpwd="pwd | tr -d '\n' | pbcopy"
 
