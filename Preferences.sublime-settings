@@ -1,10 +1,13 @@
+// Packages to install
+// JavaScriptNext, GitGutter, Flatland Dark Theme, HTML & JS Beautify
+
 {
 	"bold_folder_labels": true,
 	"caret_style": "phase",
-	"color_scheme": "Packages/Theme - Refined/Color Schemes/Tomorrow Night Refined.tmTheme",
+	"color_scheme": "Packages/Theme - Flatland/Flatland Dark.tmTheme",
 	"draw_indent_guides": true,
 	"draw_white_space": "all",
-	"ensure_newline_at_eof_on_save": true,
+	"ensure_newline_at_eof_on_save": false,
 	"flatland_square_tabs": true,
 	"folder_exclude_patterns":
 	[
@@ -12,10 +15,11 @@
 		".git",
 		"dist",
 		"build",
-		"site"
+		"node_modules",
+		".sass-cache"
 	],
 	"font_face": "Source Code Pro",
-	"font_size": 15.0,
+	"font_size": 14.5,
 	"git_gutter_live_mode": false,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
@@ -26,6 +30,11 @@
 		"Emmet",
 		"SublimeLinter",
 		"LiveReload"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
 	],
 	"line_padding_bottom": 1,
 	"line_padding_top": 1,
