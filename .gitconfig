@@ -22,6 +22,8 @@
 	# Hub
 	pr-develop = pull-request -b develop | pbcopy
 	pr-master = pull-request -b master -h develop | pbcopy
+	# Git log find by commit message
+	glf = "!r() { git log --all --grep=$1 }; r"
 [color]
 	ui = true
 [push]
