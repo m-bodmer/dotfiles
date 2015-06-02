@@ -1,14 +1,17 @@
 color Tomorrow-Night
 set guifont=Source\ Code\ Pro\ for\ Powerline:h14
 
-# Powerline status bar
+" Powerline status bar
 source /Library/Python/2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
 
-# Rebind leader key
+" Rebind leader key
 let mapleader = "\<Space>"
 
-# Show a dollar sign after a motion
+" Show a dollar sign after a motion
 set cpoptions+=$
 
-# Open MacVim with NERDTree if no command line arguments specified
+" Open MacVim with NERDTree if no command line arguments specified
 autocmd VimEnter * if !argc() | NERDTree | endif
+
+" Dont update NERDTree when focus is gained
+autocmd! AuNERDTreeCmd FocusGained
