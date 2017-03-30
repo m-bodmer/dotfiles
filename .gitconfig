@@ -2,28 +2,23 @@
 	name = Marc Bodmer
 	email = marc.bodmer@gmail.com
 [core]
-	editor = sbl -n -w
+	editor = vim
 	excludesfile = ~/.gitignore
 [alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lg = log -n 15 --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	c = commit -m
 	cob = checkout -b
 	ca = commit --amend -C HEAD
 	st = status -s
 	purr = pull --rebase
-	ready = rebase -i @{u}
 	pushup = push origin head
 	co = checkout
 	up = !git fetch origin && git rebase origin/master
 	# Remove branches that have already been merged with master
 	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
-	# Interactive rebase with the given number of latest commits
-	reb = "!r() { git rebase -i HEAD~$1; }; r"
 	# Hub
-	pr-develop = pull-request -b develop | pbcopy
-	pr-master = pull-request -b master -h develop | pbcopy
-	# Git log find by commit message
-	glf = "!r() { git log --all --grep=$1 }; r"
+	pr-staging = pull-request -b staging | pbcopy
+	pr-master = pull-request -b master -h staging | pbcopy
 [color]
 	ui = true
 [push]
