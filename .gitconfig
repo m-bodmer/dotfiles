@@ -5,7 +5,7 @@
 	editor = vim
 	excludesfile = ~/.gitignore
 [alias]
-	lg = log -n 15 --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lg = log -n 8 --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	c = commit -m
 	cob = checkout -b
 	ca = commit --amend -C HEAD
@@ -13,7 +13,14 @@
 	purr = pull --rebase
 	pushup = push origin head
 	co = checkout
-	up = !git fetch origin && git rebase origin/master
+	st = status -s
+	co = checkout
+	p = push
+	pf = push -f
+	pu = pull
+	last = log -1 HEAD --stat
+	undo = reset HEAD~1 --mixed
+	br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
 	# Remove branches that have already been merged with master
 	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 	# Hub
