@@ -1,0 +1,161 @@
+{
+  "editor.minimap.enabled": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontSize": 13,
+  "editor.fontFamily": "FiraCode Nerd Font, Monaco, 'Courier New', monospace",
+  "window.title": "${activeEditorMedium}${separator}${rootName}",
+  "editor.tabSize": 2,
+  "editor.lightbulb.enabled": "off",
+  "grunt.autoDetect": "off",
+  "jake.autoDetect": "off",
+  "editor.formatOnSave": true,
+  "editor.autoClosingBrackets": "never",
+  "telemetry.enableTelemetry": false,
+  "editor.renderWhitespace": "boundary",
+  "material-icon-theme.activeIconPack": "none",
+  "material-icon-theme.opacity": 0.9,
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorWidth": 3,
+  "editor.renderLineHighlight": "gutter",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#303030",
+    "statusBar.noFolderBackground": "#222225",
+    "statusBar.debuggingBackground": "#511f1f"
+  },
+  "editor.scrollBeyondLastLine": false,
+  "explorer.confirmDragAndDrop": false,
+  "workbench.editor.highlightModifiedTabs": true,
+  "debug.node.autoAttach": "off",
+  "go.buildOnSave": "off",
+  "go.formatTool": "default",
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": [
+    "--fast"
+  ],
+  "go.goroot": "/opt/homebrew/opt/go/libexec",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.colorTheme": "Agila Oceanic Next",
+  "editor.fontWeight": "500",
+  "typescript.format.enable": false,
+  "printcode.lineNumbers": "off",
+  "eslint.run": "onSave",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "search.exclude": {
+    "src/fixtures": true,
+    "src/static/css": true
+  },
+  "gitlens.codeLens.enabled": false,
+  "gitlens.statusBar.enabled": false,
+  "gitlens.plusFeatures.enabled": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "files.exclude": {
+    "**/contentful-delivery.json": true,
+    "**/contentful-preview.json": true
+  },
+  "editor.fontLigatures": true,
+  "workbench.editorAssociations": {
+    "git-rebase-todo": "default"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[handlebars]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.multiCursorModifier": "ctrlCmd",
+  "prettier.requireConfig": true,
+  "todohighlight.isEnable": true,
+  "editor.guides.bracketPairs": true,
+  "editor.accessibilitySupport": "off",
+  "security.workspace.trust.untrustedFiles": "open",
+  "better-comments.tags": [
+
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "fixme",
+      "color": "#FFB6C1",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "*",
+      "color": "#98C379",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+  ],
+  "files.autoGuessEncoding": true,
+  "files.trimTrailingWhitespace": true,
+  "search.searchEditor.defaultNumberOfContextLines": 4,
+  "workbench.editor.enablePreview": false,
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "go.toolsManagement.autoUpdate": true,
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.activityBar.location": "hidden",
+  "window.zoomLevel": 1,
+  "[toml]": {
+  "editor.tabSize": 2
+  },
+  "editor.wordWrapColumn": 100,
+  "editor.wordWrap": "wordWrapColumn",
+  "github.copilot.editor.enableAutoCompletions": true
+}
