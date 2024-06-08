@@ -28,10 +28,12 @@ function chpwd() {
 }
 
 # ALIASES
-alias git=hub
-
-alias cpwd="pwd | tr -d '\n' | pbcopy"
+# alias git=hub
 alias localip="ipconfig getifaddr en0"
+
+alias cat='bat --paging=never'
+alias cpwd="pwd | tr -d '\n' | pbcopy"
+alias ls='eza --icons -F -H --group-directories-first --git'
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
@@ -40,3 +42,9 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && kil
 # Hide/show all desktop icons (useful when presenting)
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+# jump to navigate dirs faster
+# eval "$(jump shell)"
+
+# starship prompt
+# eval "$(starship init zsh)"
