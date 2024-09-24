@@ -1,8 +1,10 @@
 {
   "editor.minimap.enabled": false,
   "workbench.iconTheme": "material-icon-theme",
-  "editor.fontSize": 13,
-  "editor.fontFamily": "FiraCode Nerd Font, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 12,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "editor.fontWeight": "400",
   "window.title": "${activeEditorMedium}${separator}${rootName}",
   "editor.tabSize": 2,
   "editor.lightbulb.enabled": "off",
@@ -34,10 +36,8 @@
   ],
   "go.goroot": "/opt/homebrew/opt/go/libexec",
   "workbench.editor.enablePreviewFromQuickOpen": false,
-  "workbench.colorTheme": "Agila Oceanic Next",
-  "editor.fontWeight": "500",
+  "workbench.colorTheme": "Oceanic Next (dimmed bg)",
   "typescript.format.enable": false,
-  "printcode.lineNumbers": "off",
   "eslint.run": "onSave",
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -47,7 +47,6 @@
     "src/fixtures": true,
     "src/static/css": true
   },
-  "gitlens.codeLens.enabled": false,
   "gitlens.statusBar.enabled": false,
   "gitlens.plusFeatures.enabled": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -55,15 +54,8 @@
     "**/contentful-delivery.json": true,
     "**/contentful-preview.json": true
   },
-  "editor.fontLigatures": true,
   "workbench.editorAssociations": {
     "git-rebase-todo": "default"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[handlebars]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.multiCursorModifier": "ctrlCmd",
   "prettier.requireConfig": true,
@@ -135,12 +127,6 @@
   "terminal.integrated.defaultProfile.osx": "zsh",
   "go.toolsManagement.autoUpdate": true,
   "editor.inlineSuggest.enabled": true,
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false
-  },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -157,5 +143,6 @@
   },
   "editor.wordWrapColumn": 100,
   "editor.wordWrap": "wordWrapColumn",
-  "github.copilot.editor.enableAutoCompletions": true
+  "gitlens.currentLine.enabled": false,
+  "gitlens.codeLens.enabled": false
 }
