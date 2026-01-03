@@ -1,50 +1,52 @@
-# Need to install rbenv
-
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# export AWS_ACCESS_KEY_ID="[ENTER_KEY_HERE]"
-# export AWS_SECRET_ACCESS_KEY="[ENTER_KEY_HERE]"
-
-# Start rbenv
-# export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-# Add homebrew to the completion path
-fpath=("/usr/local/bin/" $fpath)
-
-# This makes cd=pushd
-setopt AUTO_PUSHD
-
-# 10 second wait if you do something that will delete everything
-setopt RM_STAR_WAIT
-
-# LS after changing directory
-function chpwd() {
-    emulate -L zsh
-    ls -a
-}
-
-# ALIASES
-# alias git=hub
-alias localip="ipconfig getifaddr en0"
-
+# Aliases
 alias cat='bat --paging=never'
 alias cpwd="pwd | tr -d '\n' | pbcopy"
 alias ls='eza --icons -F -H --group-directories-first --git'
 
-# Show/hide hidden files in Finder
-alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+alias localip="ipconfig getifaddr en0"
 
 # Hide/show all desktop icons (useful when presenting)
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
-# jump to navigate dirs faster
-# eval "$(jump shell)"
 
-# starship prompt
-# eval "$(starship init zsh)"
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+# Ruby version manager - Lazy loaded
+rbenv() {
+  unset -f rbenv ruby gem bundle irb
+  eval "$(command rbenv init -)"
+  rbenv "$@"
+}
+ruby() { rbenv && ruby "$@"; }
+gem() { rbenv && gem "$@"; }
+bundle() { rbenv && bundle "$@"; }
+irb() { rbenv && irb "$@"; }
+
+# Fast CD
+eval "$(zoxide init zsh)"
+
+# Mise
+eval "$(/Users/mb/.local/bin/mise activate zsh)"
+
+# GC
+export AWS_PROFILE=ivs
+
+# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# Lazy-load SDKMAN
+export SDKMAN_DIR="$HOME/.sdkman"
+sdk() {
+  unset -f sdk java gradle mvn kotlin
+  [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
+  sdk "$@"
+}
+java() { sdk && java "$@"; }
+gradle() { sdk && gradle "$@"; }
+mvn() { sdk && mvn "$@"; }
+kotlin() { sdk && kotlin "$@"; }
