@@ -10,7 +10,9 @@
 pmodload 'editor'
 
 # Source module files.
-source "${0:h}/external/zsh-history-substring-search.zsh" || return 1
+if (( ! $+functions[history-substring-search-up] )); then
+  source "${0:h}/external/zsh-history-substring-search.zsh" || return 1
+fi
 
 #
 # Search
@@ -36,6 +38,18 @@ if ! zstyle -t ':prezto:module:history-substring-search' color; then
   unset HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_{FOUND,NOT_FOUND}
 fi
 
+if zstyle -t ':prezto:module:history-substring-search' fuzzy; then
+  HISTORY_SUBSTRING_SEARCH_FUZZY=1
+fi
+
+if zstyle -t ':prezto:module:history-substring-search' unique; then
+  HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
+fi
+
+if zstyle -t ':prezto:module:history-substring-search' prefixed; then
+  HISTORY_SUBSTRING_SEARCH_PREFIXED=1
+fi
+
 #
 # Key Bindings
 #
@@ -54,4 +68,6 @@ if [[ -n "$key_info" ]]; then
     bindkey -M "$keymap" "$key_info[Up]" history-substring-search-up
     bindkey -M "$keymap" "$key_info[Down]" history-substring-search-down
   done
+
+  unset keymap
 fi
