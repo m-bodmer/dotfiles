@@ -1,7 +1,7 @@
 {
   "editor.minimap.enabled": false,
   "workbench.iconTheme": "material-icon-theme",
-  "editor.fontSize": 12,
+  "editor.fontSize": 11,
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
   "editor.fontWeight": "400",
@@ -31,12 +31,10 @@
   "go.buildOnSave": "off",
   "go.formatTool": "default",
   "go.lintTool": "golangci-lint",
-  "go.lintFlags": [
-    "--fast"
-  ],
+  "go.lintFlags": ["--fast"],
   "go.goroot": "/opt/homebrew/opt/go/libexec",
   "workbench.editor.enablePreviewFromQuickOpen": false,
-  "workbench.colorTheme": "Oceanic Next (dimmed bg)",
+  "workbench.colorTheme": "Catppuccin Macchiato",
   "typescript.format.enable": false,
   "eslint.run": "onSave",
   "[json]": {
@@ -57,14 +55,12 @@
   "workbench.editorAssociations": {
     "git-rebase-todo": "default"
   },
-  "editor.multiCursorModifier": "ctrlCmd",
   "prettier.requireConfig": true,
   "todohighlight.isEnable": true,
   "editor.guides.bracketPairs": true,
   "editor.accessibilitySupport": "off",
   "security.workspace.trust.untrustedFiles": "open",
   "better-comments.tags": [
-
     {
       "tag": "!",
       "color": "#FF2D00",
@@ -136,13 +132,31 @@
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.activityBar.location": "hidden",
+  "workbench.activityBar.location": "bottom",
   "window.zoomLevel": 1,
   "[toml]": {
-  "editor.tabSize": 2
+    "editor.tabSize": 2
   },
   "editor.wordWrapColumn": 100,
   "editor.wordWrap": "wordWrapColumn",
+  "workbench.editor.showTabs": "single",
+  "window.commandCenter": false,
   "gitlens.currentLine.enabled": false,
-  "gitlens.codeLens.enabled": false
+  "gitlens.codeLens.enabled": false,
+  "editor.snippetSuggestions": "top",
+  "editor.lineHeight": 0,
+  "catppuccin.accentColor": "blue",
+  "catppuccin.italicKeywords": false,
+  // Sets the sidebar location to the right
+  "workbench.sideBar.location": "right",
+  "lldb.library": "/Applications/Xcode-15.4.0.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
+  "lldb.launch.expressions": "native",
+  "makefile.configureOnOpen": false,
+  "security.promptForLocalFileProtocolHandling": false,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "prettier.configPath": ".prettierrc",
+  "editor.rulers": [],
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  }
 }

@@ -10,8 +10,6 @@
 	cob = checkout -b
 	ca = commit --amend -C HEAD
 	st = status -s
-	purr = pull --rebase
-	pushup = push origin head
 	co = checkout
 	st = status -s
 	co = checkout
@@ -23,13 +21,13 @@
 	br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
 	# Remove branches that have already been merged with master
 	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
-	# Hub
-	pr-staging = pull-request -b staging | pbcopy
-	pr-master = pull-request -b master -h staging | pbcopy
+    # Recent branches
+	rb = !git for-each-ref --sort=\"-committerdate\" --format=\"%(color:green)%(refname:short) : %(color:red)%(committerdate:relative)\" --count=5 refs/heads/
 [color]
 	ui = true
 [push]
 	default = current
+	autoSetupRemote = true
 [credential]
 	helper = cache --timeout=3600000000000
 [branch]

@@ -35,8 +35,8 @@ eval "$(zoxide init zsh)"
 # Mise
 eval "$(/Users/mb/.local/bin/mise activate zsh)"
 
-# GC
-export AWS_PROFILE=ivs
+# Prioritize ~/.local/bin for native installations (e.g., Claude Code)
+export PATH="$HOME/.local/bin:$PATH"
 
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 # Lazy-load SDKMAN
