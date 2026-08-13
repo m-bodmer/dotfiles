@@ -1,52 +1,31 @@
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+eval "$(starship init zsh)"
 
 # Aliases
 alias cat='bat --paging=never'
 alias cpwd="pwd | tr -d '\n' | pbcopy"
 alias ls='eza --icons -F -H --group-directories-first --git'
 
-alias localip="ipconfig getifaddr en0"
-
-# Hide/show all desktop icons (useful when presenting)
-alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
-alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-
-
-# Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
-
-# Ruby version manager - Lazy loaded
-rbenv() {
-  unset -f rbenv ruby gem bundle irb
-  eval "$(command rbenv init -)"
-  rbenv "$@"
-}
-ruby() { rbenv && ruby "$@"; }
-gem() { rbenv && gem "$@"; }
-bundle() { rbenv && bundle "$@"; }
-irb() { rbenv && irb "$@"; }
-
-# Fast CD
 eval "$(zoxide init zsh)"
 
-# Mise
-eval "$(/Users/mb/.local/bin/mise activate zsh)"
+export NVM_DIR="$HOME/.nvm"
 
-# Prioritize ~/.local/bin for native installations (e.g., Claude Code)
-export PATH="$HOME/.local/bin:$PATH"
+# Create placeholder functions for Node-related commands
+lazy_load_nvm() {
+  # Remove the placeholder functions so they don't loop
+  unset -f nvm node npm npx pnpm
 
-# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-# Lazy-load SDKMAN
-export SDKMAN_DIR="$HOME/.sdkman"
-sdk() {
-  unset -f sdk java gradle mvn kotlin
-  [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
-  sdk "$@"
+  # Load the real NVM and its completion source scripts
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+  # Resume the original command the user typed
+  "$@"
 }
-java() { sdk && java "$@"; }
-gradle() { sdk && gradle "$@"; }
-mvn() { sdk && mvn "$@"; }
-kotlin() { sdk && kotlin "$@"; }
+
+# Assign the lazy loader to trigger on these commands
+nvm() { lazy_load_nvm nvm "$@" }
+node() { lazy_load_nvm node "$@" }
+npm() { lazy_load_nvm npm "$@" }
+npx() { lazy_load_nvm npx "$@" }
+pnpm() { lazy_load_nvm pnpm "$@" }
+
